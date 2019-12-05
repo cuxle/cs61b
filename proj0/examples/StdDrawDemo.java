@@ -23,7 +23,7 @@ public class StdDrawDemo {
 
 		/** Sets up the universe so it goes from
 		  * -100, -100 up to 100, 100 */
-		StdDraw.setScale(-100, 100);
+		StdDraw.setScale(-100, 200);
 
 		/* Clears the drawing window. */
 		StdDraw.clear();
@@ -32,6 +32,16 @@ public class StdDrawDemo {
 		StdDraw.picture(0, 75, imageToDraw);
 		StdDraw.picture(-75, -75, imageToDraw);
 		StdDraw.picture(75, -75, imageToDraw);
+
+		StdDraw.setPenRadius(0.1);
+		StdDraw.setPenColor(StdDraw.BLUE);
+		StdDraw.point(-100, -100);
+		StdDraw.point(100, 100);
+
+		StdDraw.setPenColor(StdDraw.RED);
+		StdDraw.point(-100, 100);
+		StdDraw.point(100, -100);
+
 
 		/* Shows the drawing to the screen, and waits 2000 milliseconds. */
 		StdDraw.show();

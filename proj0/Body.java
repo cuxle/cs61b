@@ -55,6 +55,9 @@ public class Body {
 	{
 		double fx = 0;
 		for (int i = 0; i < br.length; i++) {
+			if (this == br[i]) {
+				continue;
+			}
 			fx += this.calcForceExertedByX(br[i]);
 		}
 		return fx;
@@ -65,6 +68,9 @@ public class Body {
 
 		double fy = 0;
 		for (int i = 0; i < br.length; i++) {
+			if (this == br[i]) {
+				continue;
+			}
 			fy += this.calcForceExertedByY(br[i]);
 		}
 		return fy;
@@ -76,5 +82,9 @@ public class Body {
 		yyVel = yyVel + fy * dt / mass;
 		xxPos = xxPos + xxVel * dt;
 		yyPos = yyPos + yyVel * dt;
+	}
+
+	public void draw() {
+		StdDraw.picture(xxPos, yyPos, imgFileName);
 	}
 }
