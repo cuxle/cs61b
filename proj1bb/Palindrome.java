@@ -43,7 +43,21 @@ public class Palindrome {
 
     }
 
-    public boolean isPalindrome(String word, CharacterComparator cc) {
+    private boolean isPalindrome(Deque<Character> deq, CharacterComparator cc) {
+        if (deq == null || deq.size() < 2) {
+            return true;
+        } else {
+            if (cc.equalChars(deq.removeFirst(), deq.removeLast())) {
+                return isPalindrome(deq, cc);
+            } else {
+                return false;
+            }
+        }
 
+    }
+
+    public boolean isPalindrome(String word, CharacterComparator cc) {
+        Deque<Character> deq = wordToDeque(word);
+        return isPalindrome(deq, cc);
     }
 }
