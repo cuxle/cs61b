@@ -17,15 +17,19 @@ public class GuitarHeroLite {
                 char key = StdDraw.nextKeyTyped();
                 if (key == 'a') {
                     stringA.pluck();
+                    System.out.println("A pluck ***********************");
                 } else if (key == 'c') {
                     stringC.pluck();
+                    System.out.println("C pluck ***********************");
                 }
             }
 
         /* compute the superposition of samples */
             double sample = stringA.sample() + stringC.sample();
-
+            System.out.print("A sample:" + stringA.sample());
+            System.out.println("C sample:" + stringC.sample());
         /* play the sample on standard audio */
+            System.out.println(sample);
             StdAudio.play(sample);
 
         /* advance the simulation of each guitar string by one step */
